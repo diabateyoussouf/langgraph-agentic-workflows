@@ -7,35 +7,36 @@
 
 Bienvenue dans ce dépôt d'architectures d'**Agents IA** et de systèmes **Agentic RAG (Retrieval-Augmented Generation)** prêts pour la production. 
 
-Ce repository regroupe des implémentations de flux agentiques complexes s'appuyant sur **LangGraph**, **Pydantic v2** et **Mistral AI**, avec un accent particulier sur la gestion d'état typée, l'évaluation automatique (*Self-RAG*) et la sécurité des prompts (*Guardrails*).
+Ce repository regroupe des implémentations de flux agentiques complexes s'appuyant sur **LangGraph**, **Pydantic v2** et **Mistral AI**, avec un accent particulier sur la gestion d'état typée, l'évaluation automatique (*Self-RAG* / *Audit Node*), la sécurité des prompts (*Guardrails*) et le contrôle des boucles d'exécution.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack & Frameworks
 
-| Catégorie | Technologie | Rôle / Usage |
+| Catégorie | Technologie | Rôle / Usage dans le Repository |
 | :--- | :--- | :--- |
-| **Orchestration** | `LangGraph` | Construction de graphes d'états dynamiques, boucles d'évaluation et routeurs conditionnels |
-| **LLM & Embeddings** | `Mistral AI` | Modèles de raisonnement (`mistral-small-latest`), génération et routage structuré |
-| **Vector DB** | `ChromaDB` | Stockage vectoriel et recherche sémantique des clauses contractuelles |
-| **Validation & Schémas** | `Pydantic v2` | Saisie et validation des sorties structurées (Grades, Classifications) |
-| **Gestion d'État** | `TypedDict` / `NotRequired` | Modélisation d'état sérialisable et sécurisée au fil du graphe |
+| **Orchestration Agentique** | `LangGraph` | Construction de graphes d'états cycliques, boucles de réévaluation et routage conditionnel |
+| **LLM & Inference** | `Mistral AI` | Modèles de raisonnement (`mistral-small-latest`), génération structurée et routage d'intention |
+| **Vector DB / RAG** | `ChromaDB` | Stockage vectoriel, requêtes sémantiques et recherche contextuelle |
+| **Validation & Structured Output** | `Pydantic v2` | Saisie, validation et parsing des sorties LLM (Noms, Scores, Classifications, Audits) |
+| **Document Loaders** | `LangChain PyPDF` | Extraction directe et injection automatique de textes à partir de fichiers PDF |
+| **Gestion d'État** | `TypedDict` | Modélisation d'état sérialisable, compteurs de sécurité et historique d'exécution |
 
 ---
 
-## 📁 Structure du Projet
+## 📁 Structure du Repository
 
 ```text
 langgraph-agentic-workflows/
 │
-├── Projet01_Contrat_Securite/      # Projet  : RAG Juridique & Guardrails
-│   ├── main.py                     # Script principal et définition du StateGraph
-│   ├── state.py                    # Définition des schémas UserState & Pydantic
-│   └── README.md                   # Documentation technique spécifique
+├── Projet01_Contrat_Securite/        # Projet 1 : RAG Juridique & Guardrails
+│   ├── main.py                       # Definition du StateGraph et exécution
+│   ├── state.py                      # Définition des schémas UserState & Pydantic
+│   └── README.md                     # Documentation technique du système RAG contractuel
 │
-├── 02-intent-routing-basics/       # Modèle basique d'aiguillage d'intention
-├── 03-self-rag-evaluation/         # Boucles de contrôle qualité et anti-hallucination
+├── Projet02_Agent_Recruteur/         # Projet 2 : Agent Recruteur IA & Audit RH (Colab / Jupyter)
+│   └── Projet02_Agent_Recruteur.ipynb # Notebook autonome : Parsing PDF, extraction nominative & Audit Anti-Biais
 │
-├── .env.example                    # Modèle de configuration des variables d'environnement
-├── requirements.txt                # Liste des dépendances Python
-└── README.md                       # Documentation générale du repository
+├── .env.example                     # Modèle de configuration des variables d'environnement
+├── requirements.txt                 # Dépendances Python du projet
+└── README.md                        # Documentation générale du repository
