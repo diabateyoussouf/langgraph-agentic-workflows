@@ -26,7 +26,7 @@ Ce repository regroupe des implémentations de flux agentiques complexes s'appuy
 ## 📁 Structure du Projet
 
 ```text
-agentic-rag-architectures/
+langgraph-agentic-workflows/
 │
 ├── Projet01_Contrat_Securite/      # Projet  : RAG Juridique & Guardrails
 │   ├── main.py                     # Script principal et définition du StateGraph
