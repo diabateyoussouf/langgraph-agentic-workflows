@@ -37,6 +37,9 @@ langgraph-agentic-workflows/
 ├── Projet02_Agent_Recruteur/         # Projet 2 : Agent Recruteur IA & Audit RH (Colab / Jupyter)
 │   └── Projet02_Agent_Recruteur.ipynb # Notebook autonome : Parsing PDF, extraction nominative & Audit Anti-Biais
 │
+├── Projet03_Agent_Belvedere_Hotel/   # Projet 3 : Agent Concierge Hôtelier Multi-Tours (Colab / Jupyter)
+│   └── Projet03_Agent_Belvedere_Hotel.ipynb # Notebook : RAG Agentique, Routage d'intention & Mémoire
+│
 ├── .env.example                     # Modèle de configuration des variables d'environnement
 ├── requirements.txt                 # Dépendances Python du projet
 └── README.md                        # Documentation générale du repository
